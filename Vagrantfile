@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    $num_nodes = 3
+    $num_nodes = 2
     (1..$num_nodes).each do |i|
         config.vm.define "spark-node#{i}" do |node|
             node.vm.box = "qzchenwl/centos"
@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
             ip = "10.0.1.#{i+100}"
             node.vm.network "private_network", ip: ip
             node.vm.provider "virtualbox" do |vb|
-                vb.memory = "4096"
+                vb.memory = "8192"
                 vb.cpus = 2
                 vb.name = "spark-node#{i}"
             end

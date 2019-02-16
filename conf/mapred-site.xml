@@ -23,6 +23,7 @@
     </property>
 
     <!-- https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/  -->
+    <!--
     <property>
         <name>yarn.app.mapreduce.am.resource.mb</name>
         <value>512</value>
@@ -35,4 +36,5 @@
         <name>mapreduce.reduce.memory.mb</name>
         <value>256</value>
     </property>
+    -->
 </configuration>

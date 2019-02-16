@@ -4,8 +4,14 @@ set -xe
 cat >> /etc/hosts << EOF
 10.0.1.101 spark-node1
 10.0.1.102 spark-node2
-10.0.1.103 spark-node3
 EOF
+
+cat >> /etc/ssh/ssh_config << EOF
+Host *
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+EOF
+
 
 cat >> /etc/sysctl.conf << EOF
 net.ipv6.conf.all.disable_ipv6 = 1
@@ -32,6 +38,11 @@ mv -v /opt/spark-2.2{.3-bin-hadoop2.7,}
 mv -v /opt/hadoop-2.7{.7,}
 mv -v /opt/jdk1.8{.0_201,}
 cp -fv /vagrant/conf/{core-site.xml,hdfs-site.xml,mapred-site.xml,yarn-site.xml,slaves} /opt/hadoop-2.7/etc/hadoop
+cat >> /opt/spark-2.2/conf/spark-env.sh << 'EOF'
+SPARK_MASTER_HOST=10.0.1.101
+HADOOP_CONF_DIR=$HADOOP_HOME/conf
+EOF
+
 chown -R vagrant:vagrant /opt/{spark-2.2,hadoop-2.7,jdk1.8}
 
 cat >> /etc/profile.d/custom.sh <<'EOF'
