@@ -6,15 +6,18 @@ Spark cluster of two node. With Hadoop & Yarn.
 
 ```bash
 # 1. First download java8, spark-2.2, hadoop-2.7
-cd packages
-wget -i urls.txt
+you@host ~/vagrant-spark-cluster$ cd packages
+you@host ~/vagrant-spark-cluster/packages$ wget -i urls.txt
 
 # 2. Vagrant up
-vagrant up
+you@host ~/vagrant-spark-cluster$ vagrant up
 
 # 3. Start cluster
-vagrant ssh spark-node1
-bash /vagrant/scripts/start-cluster.sh
+you@host ../vagrant-spark-cluster$ vagrant ssh spark-node1
+vagrant@spark-node1 ~$ bash /vagrant/scripts/start-cluster.sh
+
+# 4. Test
+[vagrant@spark-node1 /opt/spark-2.2]$ spark-submit --master yarn examples/src/main/python/pi.py
 ```
 
 # References
