@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
                 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
             SCRIPT
 
-            node.vm.provision "shell", path: "scripts/bootstrap.sh"
+            node.vm.provision "shell", path: "scripts/bootstrap.sh", args: [ip]
             if i == 1
                 puts "spark-node#{i} is master"
                 node.vm.provision "shell", path: "scripts/init-master.sh"
