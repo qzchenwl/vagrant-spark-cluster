@@ -3,6 +3,7 @@ set -xe
 
 IP=$1
 
+sed -i '/127.0.0.1\s\+spark-node/d' /etc/hosts
 cat >> /etc/hosts << EOF
 10.0.1.101 spark-node1
 10.0.1.102 spark-node2

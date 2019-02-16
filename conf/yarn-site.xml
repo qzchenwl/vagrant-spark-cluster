@@ -26,7 +26,6 @@
         <value>org.apache.hadoop.mapred.ShuffleHandler</value>
     </property>
 
-
     <!-- https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/ -->
     <!--
     <property>
