@@ -44,7 +44,7 @@ cp -fv /vagrant/conf/{core-site.xml,hdfs-site.xml,mapred-site.xml,yarn-site.xml,
 cat >> /opt/spark-2.2/conf/spark-env.sh << EOF
 SPARK_MASTER_HOST=10.0.1.101
 SPARK_LOCAL_IP=$IP
-HADOOP_CONF_DIR=\$HADOOP_HOME/conf
+HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop
 EOF
 
 chown -R vagrant:vagrant /opt/{spark-2.2,hadoop-2.7,jdk1.8}
