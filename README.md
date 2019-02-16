@@ -13,7 +13,7 @@ you@host ~/vagrant-spark-cluster/packages$ wget -i urls.txt
 you@host ~/vagrant-spark-cluster$ vagrant up
 
 # 3. Start cluster
-you@host ../vagrant-spark-cluster$ vagrant ssh spark-node1
+you@host ~/vagrant-spark-cluster$ vagrant ssh spark-node1
 vagrant@spark-node1 ~$ bash /vagrant/scripts/start-cluster.sh
 
 # 4. Test
